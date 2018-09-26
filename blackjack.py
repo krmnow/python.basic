@@ -30,6 +30,7 @@ def load_images(card_images):
 def deal_card(frame):
     #pop next cart on top
     next_card = deck.pop(0)
+    deck.append(next_card)
     # add image
     tkinter.Label(frame, image=next_card[1], relief='raised').pack(side='left')
     return next_card
@@ -73,22 +74,30 @@ def deal_player():
     if player_score > 21:
         result_text.set("Dealer wins")
     
-    #    global player_score
-#    global player_ace
- #   card_value = deal_card(player_card_frame)
-  #  if card_value == 1 and not player_ace:
-        
-   #     card_value = 11
-   # player_score += card_value
+
+def new_game():
+    global dealer_card_frame
+    global player_card_frame
+    global dealer_hand
+    global player_hand
+   #embaded frame on hold card images
+   dealer_card_frame.destroy()
+   dealer_card_frame = tkinter.Frame(card_frame, background-"green")
+   dealer_card_frame.grid(row=0, column=1, sticky='ew', rowspan=2)
+   #embede frame to hold the card images
+   dealer_card_frame = tkinter.Frame(card_frame, background="green")
+   dealer_card_frame.grid(row=0, column=1, sticky="ew", rowspan=2)
+
+    result_text.set("")
+
+    dealer_hand = []
+    player_hand = []
+
+    deal_player()
+    dealer_hand.append(deal_card(dealer_card_frame))
+    dealer_score_label.set(score_hand(dealer_hand))
+    deal_player()
     
-   # if player_score > 21 and player_ace:
-    #    player_score -= 18
-     #   player_ace = False
-   # player_score_label.set(player_score)
-   # if player_score > 21:
-   #     result_text.set("Dealer wins")
-    
-    print(locals())
 # Set up the screen
 
 mainWindow = tkinter.Tk()
@@ -134,6 +143,8 @@ dealer_button.grid(row=0, column=0)
 player_button = tkinter.Button(button_frame, text="Player", command=deal_player)
 player_button.grid(row=0, column=1)
 
+new_game_buttton = tkinter.Button(button_frame, text="new game", command=new_game)
+new_game_buttton.grid(row=0, column=2)
 
 
 cards = []
@@ -144,10 +155,7 @@ random.shuffle(deck)
 dealer_hand = []
 player_hand = []
 
-deal_player()
-dealer_hand.append(deal_card(dealer_card_frame))
-deal_player()
-
+ 
 mainWindow.mainloop()
 
 

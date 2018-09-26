@@ -100,6 +100,10 @@ def new_game():
     
 # Set up the screen
 
+def shuffle():
+    random.shuffle(deck)
+
+
 mainWindow = tkinter.Tk()
 
 mainWindow.title("Black jack")
@@ -146,11 +150,12 @@ player_button.grid(row=0, column=1)
 new_game_buttton = tkinter.Button(button_frame, text="new game", command=new_game)
 new_game_buttton.grid(row=0, column=2)
 
-
+shuffle_button = tkinter.Button(button_frame, text="shuffle", command=shuffle)
+shuffle_button.grid(row=0, column=3)
 cards = []
 load_images(cards)
 deck = list(cards)
-random.shuffle(deck)
+shuffle()
 
 dealer_hand = []
 player_hand = []

@@ -13,5 +13,11 @@ def factorial(n):
     else:
         return n * factorial(n-1)
 
-for i in range(130):
+def fib(n):
+    if n < 2:
+        return n
+    else:
+        return fib(n-1) + fib(n-2)
+
+for i in range(36):
     print(i, factorial(i))

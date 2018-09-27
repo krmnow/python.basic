@@ -1,4 +1,5 @@
 
+
 import os
 
 def list_directories(s):
@@ -24,3 +25,22 @@ def list_directories(s):
         print(s + "does not exist")
     
 list_directories('.')
+
+
+################################################################
+def spam1():
+    
+    def spam2():
+    
+            def spam3():
+                z = "even more spam"
+                return z
+        
+        y = "more spam"
+        y += spam3()
+        return y
+    x = "spam"
+    x += spam2()
+    return x
+
+print(spam1())

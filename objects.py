@@ -13,3 +13,5 @@ keywood.price = 12.75
 print(keywood.price)
 
 hamilton = Kettl("Hamilton", 14.55)
+
+print("Models: {} = {}, {} = {}".format(keywood.make, keywood.price, hamilton.make, hamilton.price))

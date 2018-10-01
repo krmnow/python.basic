@@ -35,6 +35,12 @@ print("*" * 20)
 keywood.power = 1.5
 #print(keywood.power)
 
+print("Switch to atomic power")
+Kettl.power_source = "atomic"
 print(Kettl.power_source)
 print(keywood.power_source)
 print(hamilton.power_source)
+
+print(keywood.__dict__)
+print(Kettl.__dict__)
+print(hamilton.__dict__)

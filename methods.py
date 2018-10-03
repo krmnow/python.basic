@@ -20,11 +20,12 @@ class account:
         if amount > 0:
             self.balance += amount
             self.show_balance()
-            self.transaction_list.append(pytz.utc.localize(datetime.datetime.utcnow(amount)))
+            self.transaction_list.append(account._current_time(), amount)
             
     def withdraw(self, amount):
         if 0 < amount <= self.balance:
             self.balance -= amount
+            self.transaction_list.append(account._current_time(), -amount)
         else:
             print("Amount must be graeater than zero")
         self.show_balance

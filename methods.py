@@ -5,7 +5,7 @@ import pytz
 
 class account:
     
-    staticmethod    
+    @staticmethod    
     def _current_time():
         utc_time = datetime.datetime.utcnow()
         return pytz.utc.localize(utc_time)
@@ -13,8 +13,9 @@ class account:
     def __init__(self, name, balance):
         self.name = name
         self.balance = balance
-        self.transaction_list = []
+        self.transaction_list = [account._current_time(), balance]
         print("Account cerated for " + self.name)
+        self.show_balance()
         
     def deposit(self, amount):
         if amount > 0:
@@ -52,3 +53,8 @@ tin.withdraw(500)
 tin.withdraw(500)
 
 tin.show_transactions()
+
+steph = account("steph", 800)
+steph.deposit(100)
+steph.withdraw(200)
+steph.show_transactions()

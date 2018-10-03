@@ -5,7 +5,8 @@ import pytz
 
 class account:
     
-    def _current_time(self):
+    staticmethod    
+    def _current_time():
         utc_time = datetime.datetime.utcnow()
         return pytz.utc.localize(utc_time)
     

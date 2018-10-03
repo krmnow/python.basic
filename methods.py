@@ -5,6 +5,10 @@ import pytz
 
 class account:
     
+    def _current_time(self):
+        utc_time = datetime.datetime.utcnow()
+        return pytz.utc.localize(utc_time)
+    
     def __init__(self, name, balance):
         self.name = name
         self.balance = balance
@@ -45,4 +49,4 @@ tin.withdraw(500)
    # tin.show_balance()
 tin.withdraw(500)
 
-tim.show_transactions()
+tin.show_transactions()

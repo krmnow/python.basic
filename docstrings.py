@@ -24,3 +24,12 @@ class album:
         else:
             self.tracks.insert(position, song)
             
+class artist:
+    
+    def __init__(self, name):
+        self.name = name
+        self.albums = []
+        
+    def add_album(self, album):
+        
+        self.albums.append(album)

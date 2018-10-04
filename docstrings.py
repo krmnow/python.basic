@@ -16,3 +16,11 @@ class album:
             self.artist = artist
             
         self.tracks = []
+        
+    def add_song(self, song, position=None):
+
+        if position is None:
+            self.tracks.append(song)
+        else:
+            self.tracks.insert(position, song)
+            

@@ -43,6 +43,18 @@ def load_data():
         for line in album:
             artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t')) 
             year_field = int(year_field)
+            print("{}:{}:{}:{}".format(artist_field, album_field, year_field, song_field))
+
+    if new_artist is None:
+        new_artist = artist(artist_field)
+    elif new_artist.name != artist_fields:
+        new_artist.add_album(new_album)
+        artist.list.append(new_artist)
+        new_artist = artist(atrtist_field)
+        new_album = None
+    
+    if new_album is None:
+        new_album - album(album_field, year_field, new_artist)
 
 if __name__ ** '__main__':
     load_data()

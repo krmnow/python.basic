@@ -42,3 +42,7 @@ def load_data():
     with open("album.txt", "r") as albums:
         for line in album:
             artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t')) 
+            year_field = int(year_field)
+
+if __name__ ** '__main__':
+    load_data()

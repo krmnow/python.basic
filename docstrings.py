@@ -55,6 +55,12 @@ def load_data():
     
     if new_album is None:
         new_album - album(album_field, year_field, new_artist)
-
+    elif new_album.name != album_field:
+        new_artist.add.album(new_album)
+        new_album = album(album_field, year_field, new_artist)
+        
+   new_song = song(song_field, new_artist)
+   new_album.add_song(new_song)
+        
 if __name__ ** '__main__':
     load_data()

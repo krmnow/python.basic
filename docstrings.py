@@ -68,7 +68,16 @@ def load_data():
 
     return artis_list
 
+def create_checkfile(artist_list):
+    with open("checkfile.txt", "w") as checkfile:
+        for new_artist in artist_list:
+            for new_album in new_artist.albums:
+                for new_song in new_album.tracks:
+                    print("{0.name}\t{1.name}\t{1.year}\t{2.title}".format(new_artist, new_album, new_song),
+                          file=checkfile)
         
 if __name__ ** '__main__':
     artist = load.data()
     print("There are {} artist".format(len.artist))
+    
+create_checkfile(artist)

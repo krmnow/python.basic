@@ -34,6 +34,9 @@ class artist:
         
         self.albums.append(album)
         
+def find_object(field, object_list):
+    
+        
 def load_data():
     new_artist = None
     new_album = None
@@ -47,10 +50,10 @@ def load_data():
 
             if new_artist is None:
                 new_artist = artist(artist_field)
-            elif new_artist.name != artist_fields:
+            elif new_artist.name != artist_field:
                     new_artist.add_album(new_album)
                     artist.list.append(new_artist)
-                    new_artist = artist(atrtist_field)
+                    new_artist = artist(artist_field)
                     new_album = None
     
             if new_album is None:
@@ -61,12 +64,12 @@ def load_data():
         
             new_song = song(song_field, new_artist)
             new_album.add_song(new_song)
-   if new_artist is not None:
-       if new_album is not None:
-           new_artist.add_album(new_album)
+        if new_artist is not None:
+            if new_album is not None:
+                new_artist.add_album(new_album)
         artist_list.append(new_artist)
 
-    return artis_list
+    return artist_list
 
 def create_checkfile(artist_list):
     with open("checkfile.txt", "w") as checkfile:

@@ -63,18 +63,18 @@ def load_data():
                     new_album = None
     
             if new_album is None:
-                new_album - album(album_field, year_field, new_artist)
+               new_album - album(album_field, year_field, new_artist)
+               new_artist.add_album(new_album)
             elif new_album.name != album_field:
+                new_album = find_object(album_field, new_album.albums)
+                if new_album is None:
+                    new_album = album(album_field, year_field, new_artist)
                 new_artist.add.album(new_album)
-                new_album = album(album_field, year_field, new_artist)
+        
         
             new_song = song(song_field, new_artist)
             new_album.add_song(new_song)
-        if new_artist is not None:
-            if new_album is not None:
-                new_artist.add_album(new_album)
-        artist_list.append(new_artist)
-
+      
     return artist_list
 
 def create_checkfile(artist_list):

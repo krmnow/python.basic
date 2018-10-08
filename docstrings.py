@@ -53,10 +53,13 @@ def load_data():
 
             if new_artist is None:
                 new_artist = artist(artist_field)
+                artist_list.append(new_artist)
             elif new_artist.name != artist_field:
-                    new_artist.add_album(new_album)
-                    artist.list.append(new_artist)
-                    new_artist = artist(artist_field)
+                    new_artist = find_object(artist_field, artist_list)
+                    if new_artist is None:
+                        new_artist = artist(artist_field)
+                        artist_list.append(new_artist)
+                
                     new_album = None
     
             if new_album is None:

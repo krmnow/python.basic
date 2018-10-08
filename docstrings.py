@@ -35,7 +35,10 @@ class artist:
         self.albums.append(album)
         
 def find_object(field, object_list):
-    
+    for item in object_list:
+        if item.name == field:
+            return item
+    return None
         
 def load_data():
     new_artist = None

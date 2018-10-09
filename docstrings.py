@@ -54,7 +54,8 @@ def load_data():
             if new_artist is None:
                 new_artist = artist(artist_field)
                 artist_list.append(new_artist)
-                
+            
+            new_artist.add_song(album_field, year_field, song_field)
       
     return artist_list
 

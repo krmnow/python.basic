@@ -4,6 +4,11 @@ class song:
         self.name = title
         self.artist = artist
         self.duration = duration
+        
+    def get_title(self):
+        return self.title
+
+    name = property(get_title)
 
 class album:
     

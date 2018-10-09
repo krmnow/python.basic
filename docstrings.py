@@ -16,7 +16,7 @@ class album:
         self.name = name
         self.year = year
         if artist is None:
-            self.artist = artist("Various artist")
+            self.artist = "Various artist"
         else:
             self.artist = artist
             
@@ -46,7 +46,7 @@ class artist:
         album_found = find_object(name, self.albums)
         if album_found is None:
             print(name + " not found")
-            album_found = album(name, yer, self)
+            album_found = album(name, yer, self.name)
             self.add_album(album_found)
         else:
             print("Found album " + name)

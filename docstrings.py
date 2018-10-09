@@ -34,6 +34,17 @@ class artist:
         
         self.albums.append(album)
         
+    def add_song(self, name, year, title):
+        album_found = find_object(name, self.albums)
+        if album_found is None:
+            print(name + " not found")
+            album_found = album(name, yer, self)
+            self.add_album(album_found)
+        else:
+            print("Found album " + name)
+        album_found.add_song(title)
+    
+        
 def find_object(field, object_list):
     for item in object_list:
         if item.name == field:

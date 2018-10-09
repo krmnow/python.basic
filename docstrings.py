@@ -11,7 +11,7 @@ class album:
         self.name = name
         self.year = year
         if artist is None:
-            self.artist = Artist("Various artist")
+            self.artist = artist("Various artist")
         else:
             self.artist = artist
             
@@ -41,39 +41,20 @@ def find_object(field, object_list):
     return None
         
 def load_data():
-    new_artist = None
-    new_album = None
+    
     artist_list = []
     
-    with open("album.txt", "r") as albums:
+    with open("album.txt", "r") as album:
         for line in album:
             artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t')) 
             year_field = int(year_field)
             print("{}:{}:{}:{}".format(artist_field, album_field, year_field, song_field))
 
+            new_artist = find_object(artist_field, artist_list)
             if new_artist is None:
                 new_artist = artist(artist_field)
                 artist_list.append(new_artist)
-            elif new_artist.name != artist_field:
-                    new_artist = find_object(artist_field, artist_list)
-                    if new_artist is None:
-                        new_artist = artist(artist_field)
-                        artist_list.append(new_artist)
                 
-                    new_album = None
-    
-            if new_album is None:
-               new_album - album(album_field, year_field, new_artist)
-               new_artist.add_album(new_album)
-            elif new_album.name != album_field:
-                new_album = find_object(album_field, new_album.albums)
-                if new_album is None:
-                    new_album = album(album_field, year_field, new_artist)
-                new_artist.add.album(new_album)
-        
-        
-            new_song = song(song_field, new_artist)
-            new_album.add_song(new_song)
       
     return artist_list
 

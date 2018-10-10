@@ -18,4 +18,4 @@ class enemy:
 class troll(enemy):
     
     def __init__(self, name):
-        enemy.__init__(self, name=name, lives=1, hit_points=23)
+        super(troll, self).__init__(name=name, lives=1, hit_points=23)

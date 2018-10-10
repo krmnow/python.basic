@@ -19,3 +19,6 @@ class troll(enemy):
     
     def __init__(self, name):
         super(troll, self).__init__(name=name, lives=1, hit_points=23)
+
+    def grunt(self):
+        print("Me {0.name}, {0.name} stopiing you".format(self))

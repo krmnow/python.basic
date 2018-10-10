@@ -33,3 +33,11 @@ class vampire(enemy):
     def __init__(self, name):
         super().__init__(name=name, lives=3, hit_points=12)
         
+    def dodges(self):
+        import random
+        if random.randit(1,3) == 3:
+            print("+++++ {0.name} doges +++".format(self))
+            return True
+        else:
+            return False
+        

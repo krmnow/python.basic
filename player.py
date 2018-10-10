@@ -22,3 +22,8 @@ class troll(enemy):
 
     def grunt(self):
         print("Me {0.name}, {0.name} stopiing you".format(self))
+        
+class vampire(enemy):
+    def __init__(self, name):
+        super().__init__(name=name, lives=3, hit_points=12)
+        

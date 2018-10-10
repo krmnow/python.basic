@@ -41,3 +41,8 @@ class vampire(enemy):
         else:
             return False
         
+    def take_damage(self, damage):
+        if not self.dodges():
+            super().take_damage(damage=damage)
+        
+        

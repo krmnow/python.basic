@@ -16,4 +16,6 @@ class enemy:
         return "Name {0.name}, lives {0.lives}, hist: {0.hit_points}".format(self)
     
 class troll(enemy):
-    pass
+    
+    def __init__(self, name):
+        enemy.__init__(self, name=name, lives=1, hit_points=23)

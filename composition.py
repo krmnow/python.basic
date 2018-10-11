@@ -10,3 +10,9 @@ class tag(object):
         
     def display(self):
         print(self)
+
+class doctype(tag):
+    def __init__(self):
+        super().__init__("!DOCTYPE HTML PUBLIC", '')
+        self.end_tag = ''
+        

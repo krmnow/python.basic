@@ -45,4 +45,6 @@ class vampire(enemy):
         if not self.dodges():
             super().take_damage(damage=damage)
         
-        
+class vampireking(vampire):
+    def __init__(self, name):
+        super().__init__(name)

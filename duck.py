@@ -1,0 +1,3 @@
+class duck(object):
+    
+    

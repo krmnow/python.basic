@@ -48,3 +48,4 @@ class vampire(enemy):
 class vampireking(vampire):
     def __init__(self, name):
         super().__init__(name)
+        self.hit_points = 140

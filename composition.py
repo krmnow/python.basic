@@ -36,3 +36,10 @@ class body(tag):
             self.contects += str(tag)
             
             super().display
+            
+class html_doc(object):
+    
+    def __init__(self):
+        self._doc_type = DocType()
+        self_head = head()
+        self._body = body()

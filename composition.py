@@ -21,7 +21,7 @@ class head(tag):
     def __init__(self):
         super().__init__('head', '')
         self._title_tag = tag('title', title)
-        self.contects = str(self._title_tag)
+            self.contects = str(self._title_tag)
         
 class body(tag):
     
@@ -57,12 +57,12 @@ class html_doc(object):
         print('</html>', file=file)
 
 if __name__ == '__main__':
-my_page = html_doc('Demo Html document')
-my_page.add._tag('h1', "Main heading') 
-my_page.add._tag('h2', 'sub heading')
-my_page.add._tag('p', 'this is paragraph')
-with open('test.html', 'w') as test_doc:
-    my_page.display
+    my_page = html_doc('Demo Html document')
+    my_page.add._tag('h1', "Main heading') 
+    my_page.add._tag('h2', 'sub heading')
+    my_page.add._tag('p', 'this is paragraph')
+        with open('test.html', 'w') as test_doc:
+            my_page.display
     
 new_body = body()
 new_body.add_tag('h1', 'agregation')

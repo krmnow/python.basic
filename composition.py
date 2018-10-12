@@ -40,6 +40,16 @@ class body(tag):
 class html_doc(object):
     
     def __init__(self):
-        self._doc_type = DocType()
-        self_head = head()
+        self._doc_type = doctype()
+        self._head = head()
         self._body = body()
+        
+    def add_tag(self, name, contects):
+        self._body.add_tag(name, contects)
+        
+    def display(self):
+        self._doc_type.display()
+        print('<html>')
+        self._head.display()
+        slef._body.display()
+        print('</html>')

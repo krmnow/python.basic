@@ -51,5 +51,12 @@ class html_doc(object):
         self._doc_type.display()
         print('<html>')
         self._head.display()
-        slef._body.display()
+        self._body.display()
         print('</html>')
+
+if __name__ == '__main__':
+my_page = html_doc()
+my_page.add._tag('h1', "Main heading') 
+my_page.add._tag('h2', 'sub heading')
+my_page.add._tag('p', 'this is paragraph')
+my_page.display

@@ -8,6 +8,9 @@ db.execute("INSERT INTO contacts VALUES ('Ida', 5435, 'myemail@gmail.pl')")
 
 cursor = db.cursor()
 cursor.execute("SELECT * FROM contacts")
+
+print(cursor.fetchall())
+
 for row in cursor:
     print(row)
 

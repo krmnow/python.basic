@@ -3,11 +3,14 @@ def factorial(n):
     if n <= 1:
         return 1
     else:
-     return n * factorial(n-1)
+        print(n / 0)
+        return n * factorial(n-1)
  
 try:    
-    print (factorial(10))
+    print (factorial(1000))
 except RecursionError:
     print("This progranm calculate factorial that large")
-    
+except ZeroDivisionError:
+    print("Nie dziel przez zero")    
+
 print("program terminating")

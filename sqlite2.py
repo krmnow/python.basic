@@ -10,7 +10,7 @@ update_sql = "UPDATE contacts SET email = ? WHERE phone = ?"
 print(update_sql)
 
 
-udpate_cursor = db.cursor()
+update_cursor = db.cursor()
 update_cursor.execute(update_sql)
 print("{} row update".format(update_cursor.connection == db))
 

@@ -1,4 +1,4 @@
-def getint():
+def getint(prompt):
     while True:
         try:
             number = int(input("Please enetr a number: "))
@@ -6,3 +6,10 @@ def getint():
         except ValueError:
             print("Invalid number netred, please try again")
             
+first_number = getint("please enter first numer")
+second_number = getint("please enter second numer")
+
+try:
+    print("{} divided by {} is {}".format(first_number, second_number, first_number / second_number))
+except ZeroDivisionError:
+    print("You cant divide by zero")  

@@ -4,9 +4,9 @@ def getint(prompt):
             number = int(input("Please enetr a number: "))
             return number
         except ValueError:
-            print("Invalid number netred, please try again")
+            print("Invalid number entered, please try again")
         except EOFError:
-            sys.ex(())
+            sys.exit(1)
         finally:
             print("the finally clause always executed")
             
@@ -17,6 +17,7 @@ try:
     print("{} divided by {} is {}".format(first_number, second_number, first_number / second_number))
 except ZeroDivisionError:
     print("You cant divide by zero")  
-    sys.exit()
+    sys.exit(2)
 else:
     print("Division perfprmed succesfully")
+    

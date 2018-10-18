@@ -6,12 +6,17 @@ class wing(object):
     def fly(self):
         if self.ratio > 1:
             print("Smiesznie")
-        elif:
+        elif: self.ratio = 1
             print("ciezko idzie ale latam")
         else:
             print("dziekuje, postoje")
 
+
+
 class duck(object):
+
+    def __init__(self):
+        self.wing = wing(1.8)
     
     def walk(self):
         print("waddle, waddle, waddle")
@@ -21,6 +26,8 @@ class duck(object):
     def quack(self):
         print("kwa kwa")
         
+    def fly(self):
+        self.wing.fly()
         
 class pingwin(self):
 

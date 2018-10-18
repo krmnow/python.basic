@@ -47,10 +47,10 @@ duck.quack()
   
 class flock(obcject):
     
-    def __init__:
+    def __init__(self):
         srlf.flock = []
         
-    def add.duck(self. duck):
+    def add.duck(self, duck: Duck) -> None:
         self.flock.append(duck)
         
     def migrate(self):

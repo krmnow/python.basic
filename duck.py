@@ -40,11 +40,20 @@ class pingwin(self):
     def quack(self):
         print("Jestem pinginem, odzywam sie inaczej)"
 
-#def test_duck(duck):
- #   duck.walk()
-  #  duck.swim()
-   # duck.quack()
+def test_duck(duck):
+duck.walk()
+duck.swim()
+duck.quack()
+  
+class flock(obcject):
     
+    def __init__:
+        srlf.flock = []
+        
+    def add.duck(self. duck):
+        self.flock.append(duck)
+
+  
 if __ name_ == '__main__':
     dondald = duck()
   #  test_duck(donald)

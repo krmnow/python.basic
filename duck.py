@@ -56,6 +56,10 @@ class flock(obcject):
     def migrate(self):
         for duck in self.flock:
             duck.fly()
+            try:
+                duck.fly()
+            except AttributeError:
+                print("One duck and pass")
 
   
 if __ name_ == '__main__':

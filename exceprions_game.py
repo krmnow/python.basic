@@ -5,6 +5,10 @@ def getint(prompt):
             return number
         except ValueError:
             print("Invalid number netred, please try again")
+        except EOFError:
+            sys.ex(())
+        finally:
+            print("the finally clause always executed")
             
 first_number = getint("please enter first numer")
 second_number = getint("please enter second numer")

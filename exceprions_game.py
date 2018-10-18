@@ -17,3 +17,6 @@ try:
     print("{} divided by {} is {}".format(first_number, second_number, first_number / second_number))
 except ZeroDivisionError:
     print("You cant divide by zero")  
+    sys.exit()
+else:
+    print("Division perfprmed succesfully")

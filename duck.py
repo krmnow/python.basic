@@ -52,6 +52,10 @@ class flock(obcject):
         
     def add.duck(self. duck):
         self.flock.append(duck)
+        
+    def migrate(self):
+        for duck in self.flock:
+            duck.fly()
 
   
 if __ name_ == '__main__':

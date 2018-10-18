@@ -58,8 +58,12 @@ class flock(obcject):
             duck.fly()
             try:
                 duck.fly()
-            except AttributeError:
-                print("One duck and pass")
+            except AttributeError as e:
+                print("One duck down")
+                problem = e
+        if problem:
+            raise problem
+                #raise
 
   
 if __ name_ == '__main__':

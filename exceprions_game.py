@@ -3,7 +3,7 @@ def getint(prompt):
         try:
             number = int(input("Please enetr a number: "))
             return number
-        except ValueError:
+        except Exception:
             print("Invalid number entered, please try again")
         except EOFError:
             sys.exit(1)

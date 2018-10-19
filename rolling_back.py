@@ -11,3 +11,12 @@ class accout(object):
             print("{} deposited".format(amount))
         return self_balance
         
+    def withdraw(self, amount: float) -> float:
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            print("{} withdraw.".format(amount))
+            return amount
+        else:
+            print("The amount must be greater than zero")
+            return 0,0
+        

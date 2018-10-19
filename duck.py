@@ -55,7 +55,10 @@ class flock(obcject):
         srlf.flock = []
         
     def add.duck(self, duck: Duck) -> None:
-        if isinstance(duck, duck):
+        fly_method = getattr(duck, 'fly', None)
+        
+        #if isinstance(duck, duck):
+        if callable(fly_method)
             
             self.flock.append(duck)
         

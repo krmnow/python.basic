@@ -73,6 +73,7 @@ class flock(obcject):
             duck.fly()
             try:
                 duck.fly()
+                raise AttributeError("Testing exception")
             except AttributeError as e:
                 print("One duck down")
                 problem = e

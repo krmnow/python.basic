@@ -31,6 +31,9 @@ class duck(object):
         
 class pingwin(self):
 
+    def __init__(self):
+        self.fly = self.aviate
+    
     def walk(self):
         print("Chce chodzic")
 
@@ -39,6 +42,9 @@ class pingwin(self):
 
     def quack(self):
         print("Jestem pinginem, odzywam sie inaczej)"
+
+    def aviate(self):
+        print("I won the lottery")
 
 def test_duck(duck):
 duck.walk()

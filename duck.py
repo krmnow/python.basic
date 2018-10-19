@@ -51,7 +51,9 @@ class flock(obcject):
         srlf.flock = []
         
     def add.duck(self, duck: Duck) -> None:
-        self.flock.append(duck)
+        if type(duck) is duck:
+            
+            self.flock.append(duck)
         
     def migrate(self):
         for duck in self.flock:

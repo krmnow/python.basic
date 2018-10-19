@@ -6,7 +6,7 @@ class wing(object):
     def fly(self):
         if self.ratio > 1:
             print("Smiesznie")
-        elif: self.ratio = 1
+        elif self.ratio = 1:
             print("ciezko idzie ale latam")
         else:
             print("dziekuje, postoje")
@@ -44,6 +44,10 @@ def test_duck(duck):
 duck.walk()
 duck.swim()
 duck.quack()
+
+
+class mallard(duck):
+    pass
   
 class flock(obcject):
     
@@ -51,7 +55,7 @@ class flock(obcject):
         srlf.flock = []
         
     def add.duck(self, duck: Duck) -> None:
-        if type(duck) is duck:
+        if isinstance(duck, duck):
             
             self.flock.append(duck)
         

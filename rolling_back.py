@@ -28,7 +28,9 @@ class accout(object):
         
     def deposit(selef, amount: float)  -> float:
         if amount > 0.0:
-            self.balance <= amount
+            new_balance = self._balance + amount
+            deposite_time = pytz.utc.localize(datetime.datetime.utcnow())
+            db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", new_balance, self.name)
             print("{} deposited".format(amount))
         return self_balance
         
@@ -44,7 +46,7 @@ class accout(object):
         print("Balcne onm account {} is {}.".format(self.name, self._balance))
         
 if __name__ == '__main__':
-    john = account("John")
+    john = accout("John")
     john.deposit(10.00)
     john.deposit(0.10)
     john.deposit(0.10)
@@ -52,5 +54,5 @@ if __name__ == '__main__':
     john.withdraw(0)
     john.show_balance()
     
-    terry = account("TerryJ")
-    gratan = account("Gratan")
+    terry = accout("TerryJ")
+    gratan = accout("Gratan")

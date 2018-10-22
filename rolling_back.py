@@ -9,6 +9,10 @@ db.execute("CREATE TABLE IF NOT EXISTS transactions (time TIMESTAMP NOT NULL,"
 
 
 class accout(object):
+    
+    def __current_time(self):
+        return pytz.utc.localize(datetime.datetime.utcnow())
+    
     def __init__(self, name: str, opening_balance: float = 0.0):
         cursor = db.execute("SELECT name, balance FRON accoubts WHERE (name = ?", (name),)
         row = cursor.fetchone()
@@ -31,7 +35,7 @@ class accout(object):
     def deposit(selef, amount: float)  -> float:
         if amount > 0.0:
             new_balance = self._balance + amount
-            deposite_time = pytz.utc.localize(datetime.datetime.utcnow())
+            deposite_time = account._current_time()
             db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", new_balance, self.name)
             db.execute("INSERT INTO history VALUES (?, ?, ?)", deposite_name, self.name, amount)
             db.commit()
@@ -41,7 +45,11 @@ class accout(object):
         
     def withdraw(self, amount: float) -> float:
         if 0 < amount <= self.balance:
-            self.balance -= amount
+            new_balance = self._balance - amount
+            withdraw_time = account._current_time()
+            db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", new_balance, self.name)
+            db.execute("INSERT INTO history VALUES (?, ?, ?)", deposite_name, self.name, amount)
+            db.commit()
             print("{} withdraw.".format(amount))
             return amount
         else:

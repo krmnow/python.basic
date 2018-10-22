@@ -34,22 +34,13 @@ class accout(object):
         
     def deposit(selef, amount: float)  -> float:
         if amount > 0.0:
-            new_balance = self._balance + amount
-            deposite_time = account._current_time()
-            db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", new_balance, self.name)
-            db.execute("INSERT INTO history VALUES (?, ?, ?)", deposite_name, self.name, amount)
-            db.commit()
-            self._balance = new_balance
+           self._save_update(amount)
             print("{} deposited".format(amount))
         return self_balance
         
     def withdraw(self, amount: float) -> float:
         if 0 < amount <= self.balance:
-            new_balance = self._balance - amount
-            withdraw_time = account._current_time()
-            db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", new_balance, self.name)
-            db.execute("INSERT INTO history VALUES (?, ?, ?)", deposite_name, self.name, amount)
-            db.commit()
+            self._save_update(-amount)
             print("{} withdraw.".format(amount))
             return amount
         else:
@@ -57,6 +48,14 @@ class accout(object):
             return 0,0
     def show_balance(self):
         print("Balcne onm account {} is {}.".format(self.name, self._balance))
+        
+    def _save_update(self, amount):
+        new_balance = self._balance + amount
+        deposite_time = account._current_time()
+        db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", new_balance, self.name)
+        db.execute("INSERT INTO history VALUES (?, ?, ?)", deposite_name, self.name, amount)
+        db.commit()
+        self._balance = new_balance
         
 if __name__ == '__main__':
     john = accout("John")

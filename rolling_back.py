@@ -51,3 +51,6 @@ if __name__ == '__main__':
     john.withdraw(0.30)
     john.withdraw(0)
     john.show_balance()
+    
+    terry = account("TerryJ")
+    gratan = account("Gratan")

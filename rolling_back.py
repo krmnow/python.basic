@@ -1,4 +1,6 @@
 import sqlite3
+import datatime
+import pytz
 
 db = sqlite3.connect('account.sqlite')
 db.execute("CREATE TABLE IF NOT EXISTS accounts (name TEXT PRIMARY KEY NOT NULL, balance INTEGER NOT NULL)")
@@ -33,6 +35,7 @@ class accout(object):
             db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", new_balance, self.name)
             db.execute("INSERT INTO history VALUES (?, ?, ?)", deposite_name, self.name, amount)
             db.commit()
+            self._balance = new_balance
             print("{} deposited".format(amount))
         return self_balance
         

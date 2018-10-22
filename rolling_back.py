@@ -31,6 +31,8 @@ class accout(object):
             new_balance = self._balance + amount
             deposite_time = pytz.utc.localize(datetime.datetime.utcnow())
             db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", new_balance, self.name)
+            db.execute("INSERT INTO history VALUES (?, ?, ?)", deposite_name, self.name, amount)
+            db.commit()
             print("{} deposited".format(amount))
         return self_balance
         

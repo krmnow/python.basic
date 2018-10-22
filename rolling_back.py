@@ -3,7 +3,7 @@ import sqlite3
 db = sqlite3.connect('account.sqlite')
 db.execute("CREATE TABLE IF NOT EXISTS accounts (name TEXT PRIMARY KEY NOT NULL, balance INTEGER NOT NULL)")
 db.execute("CREATE TABLE IF NOT EXISTS transactions (time TIMESTAMP NOT NULL,"
-                                                     " account TEXT NOT NULL amount INTEGER NOT NULL, PRIMARY KEY (time, account))")
+           " account TEXT NOT NULL amount INTEGER NOT NULL, PRIMARY KEY (time, account))")
 
 
 class accout(object):

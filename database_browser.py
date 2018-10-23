@@ -32,3 +32,19 @@ tkinter.label(mainwindow, text='Songs').grid(row=0, column=2)
 artistlist = tkinter.Listbox(mainwindow)
 artistlist.grid(row=1, column=0, sticky='nsew', rowspan=2, padx=(30,0))
 artistlist.config(border=2, relief='sunken')
+
+#album listbox
+
+albumLV = tkinter.Variable(mainwindow)
+albumLV.set("Choose an artist")
+albumlist = tkinter.Listbox(mainwindow, listvariable=albumLV)
+albumlist.grid(row=1, column=1, sticky='nsew', padx=(30,0))
+albumlist.config(border=2, relief='sunken')
+
+#song listbox
+
+songLV = tkinter.Variable(mainwindow)
+songLV.set("Choose a song")
+songlist = tkinter.Listbox(mainwindow, listvariable=songLv)
+songlist.grid(row=1, column=2, sticky='nsew', padx=(30,0))
+songlist.config(border=2, relief='sunken')

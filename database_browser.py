@@ -9,10 +9,14 @@ conn = sqlite3.connect('music.sqlite')
 
 class scrollbox(tkinter.Listbox):
     def __init__(self, window, **kwargs):
-    super().__init__(window, **kwargs)
+        super().__init__(window, **kwargs)
     
-    self.scrollbar = tkinter.Scrollbar(window, orient=tkinter.VERTICAL, command=self.yview)
+        self.scrollbar = tkinter.Scrollbar(window, orient=tkinter.VERTICAL, command=self.yview)
     
+    def grid(self, row, column, sticky="nsw", rowspan=1, columnspan=1, ++kwargs):
+        super().grid(row=row, column=column, sticky=sticky, rowspan=rowspan, columnspan=columnspan, **kwargs)
+        self.scrollbar.grid(row=row, column=column, sticky="nse", rowspan=rowspan)
+        slef("yscrollcommand") = self.scrollbar.set
 
 mainwindow = tkinter.Tk()
 mainwindow.title('Music BD Browser')
@@ -40,9 +44,6 @@ artistlist = scrollbox(mainwindow)
 artistlist.grid(row=1, column=0, sticky='nsew', rowspan=2, padx=(30,0))
 artistlist.config(border=2, relief='sunken')
 
-artistscroll = tkinter.Scrollbar(mainwindow, orient=tkinter.VERTICAL, command=artistlist, yview)
-artistscroll.grid(row=1, column=1, sticky='nsew', padx=(30,0))
-artistscroll.config(border=2, relief='sunken')
 
 #album listbox
 

@@ -59,6 +59,9 @@ class accout(object):
             db.execute("INSERT INTO history VALUES (?, ?, ?)", deposite_name, self.name, amount)
         except sqlite3.Error:
             db.rollback()
+        else:
+            self._balance = new_balance
+            db.commit()
         finally:
         db.commit()
         self._balance = new_balance

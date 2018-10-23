@@ -48,3 +48,7 @@ songLV.set("Choose a song")
 songlist = tkinter.Listbox(mainwindow, listvariable=songLv)
 songlist.grid(row=1, column=2, sticky='nsew', padx=(30,0))
 songlist.config(border=2, relief='sunken')
+
+mainwindow.mainloop()
+print("closing dataase connection")
+conn.close()

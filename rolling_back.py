@@ -12,7 +12,8 @@ db.execute("CREATE VIEV IF NOT EXISTS localhistory AS"
 class accout(object):
     
     def __current_time(self):
-        return pytz.utc.localize(datetime.datetime.utcnow())
+        #return pytz.utc.localize(datetime.datetime.utcnow())
+        return 1
     
     def __init__(self, name: str, opening_balance: float = 0.0):
         cursor = db.execute("SELECT name, balance FRON accoubts WHERE (name = ?", (name),)
@@ -53,8 +54,12 @@ class accout(object):
     def _save_update(self, amount):
         new_balance = self._balance + amount
         deposite_time = account._current_time()
-        db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", new_balance, self.name)
-        db.execute("INSERT INTO history VALUES (?, ?, ?)", deposite_name, self.name, amount)
+        try:
+            db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", new_balance, self.name)
+            db.execute("INSERT INTO history VALUES (?, ?, ?)", deposite_name, self.name, amount)
+        except sqlite3.Error:
+            db.rollback()
+        finally:
         db.commit()
         self._balance = new_balance
         

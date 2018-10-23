@@ -7,6 +7,13 @@ except ImportError:
     
 conn = sqlite3.connect('music.sqlite')
 
+class scrollbox(tkinter.Listbox):
+    def __init__(self, window, **kwargs):
+    super().__init__(window, **kwargs)
+    
+    self.scrollbar = tkinter.Scrollbar(window, orient=tkinter.VERTICAL, command=self.yview)
+    
+
 mainwindow = tkinter.Tk()
 mainwindow.title('Music BD Browser')
 mainwindow.geometry('1824x763')
@@ -29,15 +36,19 @@ tkinter.label(mainwindow, text='Songs').grid(row=0, column=2)
 
 # artist listbox
 
-artistlist = tkinter.Listbox(mainwindow)
+artistlist = scrollbox(mainwindow)
 artistlist.grid(row=1, column=0, sticky='nsew', rowspan=2, padx=(30,0))
 artistlist.config(border=2, relief='sunken')
+
+artistscroll = tkinter.Scrollbar(mainwindow, orient=tkinter.VERTICAL, command=artistlist, yview)
+artistscroll.grid(row=1, column=1, sticky='nsew', padx=(30,0))
+artistscroll.config(border=2, relief='sunken')
 
 #album listbox
 
 albumLV = tkinter.Variable(mainwindow)
 albumLV.set("Choose an artist")
-albumlist = tkinter.Listbox(mainwindow, listvariable=albumLV)
+albumlist = scrollbox(mainwindow, listvariable=albumLV)
 albumlist.grid(row=1, column=1, sticky='nsew', padx=(30,0))
 albumlist.config(border=2, relief='sunken')
 
@@ -45,10 +56,12 @@ albumlist.config(border=2, relief='sunken')
 
 songLV = tkinter.Variable(mainwindow)
 songLV.set("Choose a song")
-songlist = tkinter.Listbox(mainwindow, listvariable=songLv)
+songlist = scrollbox(mainwindow, listvariable=songLV)
 songlist.grid(row=1, column=2, sticky='nsew', padx=(30,0))
 songlist.config(border=2, relief='sunken')
 
+
+albumLV.set(1, 2, 3, 4, 5)
 mainwindow.mainloop()
 print("closing dataase connection")
 conn.close()

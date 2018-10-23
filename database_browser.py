@@ -20,3 +20,15 @@ mainwindow.rowconfigure(0, weight=1)
 mainwindow.rowconfigure(1, weight=5)
 mainwindow.rowconfigure(2, weight=5)
 mainwindow.rowconfigure(3, weight=1)
+
+#labels
+
+tkinter.label(mainwindow, text='Artist').grid(row=0, column=0)
+tkinter.label(mainwindow, text='Albums').grid(row=0, column=1)
+tkinter.label(mainwindow, text='Songs').grid(row=0, column=2)
+
+# artist listbox
+
+artistlist = tkinter.Listbox(mainwindow)
+artistlist.grid(row=1, column=0, sticky='nsew', rowspan=2, padx=(30,0))
+artistlist.config(border=2, relief='sunken')

@@ -2,5 +2,5 @@ import sqlite
 
 conn = sqlite3.connect('music.sqlite')
 
-for x in conn.execute("SELECT albums.name FROM albums WHERE albums.artist = ? ORDER BY albums.name", (196,))!=:
+for x in conn.execute("SELECT albums.name FROM albums WHERE albums.artist = ? ORDER BY albums.name", (196,)):
     print(x)

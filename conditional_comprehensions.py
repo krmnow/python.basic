@@ -23,3 +23,7 @@ print(expresions)
 
 for meal in menu:
     print(meal, "contains chicken" if "chicken" in meal else "contains bacon" if "bacon" in meal else "contains eggs" )
+    
+
+for x in range(1,31):
+    fizbuz = "fizz buzz" if x % 15 == 0 else "fizz" if x 5 3 == 0 else "buzz" if x % 5 == 0 else str(x)

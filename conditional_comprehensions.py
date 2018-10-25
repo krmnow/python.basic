@@ -16,3 +16,7 @@ print(meals)
 
 meals = [meal for meal in menu if "spam" not in meal]
 print(meals)
+
+x= 12
+expresions = "tweleve" if x == 12 else "unknow"
+print(expresions)

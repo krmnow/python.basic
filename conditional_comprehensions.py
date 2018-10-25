@@ -20,3 +20,6 @@ print(meals)
 x= 12
 expresions = "tweleve" if x == 12 else "unknow"
 print(expresions)
+
+for meal in menu:
+    print(meal, "contains chicken" if "chicken" in meal else "contains bacon" if "bacon" in meal else "contains eggs" )

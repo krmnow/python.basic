@@ -27,3 +27,9 @@ for meal in menu:
 
 for x in range(1,31):
     fizbuz = "fizz buzz" if x % 15 == 0 else "fizz" if x 5 3 == 0 else "buzz" if x % 5 == 0 else str(x)
+    
+def not_span(meal_list: list):
+    return "sapn" not in meal_list
+
+spamless_melas = list(filter(not_spam, menu))
+print(spamless_melas)

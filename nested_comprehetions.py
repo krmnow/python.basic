@@ -8,5 +8,5 @@ for burger in burgers:
     for toping in topings:
         print((burger, toping))
         
-for meals in [{burger, toping} for burger in burgers for toping in topings]
-print(meals)
+for meals in [{burger, toping} for burger in burgers for toping in topings]:
+    print(meals)

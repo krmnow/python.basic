@@ -1,10 +1,18 @@
-x = int(input("Wpisz liczbe: "))
+# =============================================================================
+# x = int(input("Wpisz liczbe: "))
+# 
+# if x % 2 == 0:
+#     print("Twoja liczba jest podzielna przez 2")
+# elif x % 4 == 0:
+#     print("Twoja liczba jest podzielna przez 4")
+# else:
+#     print("Twoja liczba nie jest podzielna przez 2 ani 4")
+# 
+# print(x)
+# =============================================================================
 
-if x % 2 == 0:
-    print("Twoja liczba jest podzielna przez 2")
-elif x % 4 == 0:
-    print("Twoja liczba jest podzielna przez 4")
-else:
-    print("Twoja liczba nie jest podzielna przez 2 ani 4")
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
-print(x)
+for b in a:
+    if b < 5:
+        print(b)

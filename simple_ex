@@ -1,0 +1,10 @@
+x = int(input("Wpisz liczbe: "))
+
+if x % 2 == 0:
+    print("Twoja liczba jest podzielna przez 2")
+elif x % 4 == 0:
+    print("Twoja liczba jest podzielna przez 4")
+else:
+    print("Twoja liczba nie jest podzielna przez 2 ani 4")
+
+print(x)

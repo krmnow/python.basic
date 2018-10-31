@@ -53,7 +53,27 @@
 # =============================================================================
 
 
-a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+# =============================================================================
+# a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+# 
+# b = [x for x in a if x % 2 == 0]
+# print(b)
+# =============================================================================
 
-b = [x for x in a if x % 2 == 0]
-print(b)
+rule = {"rock": {"scissor": "win",
+                 "paper": "lose",
+                 "rock" : "draw"},
+        "paper": {"rock" : "win"
+                  "scissor" : "lose",
+                  "paper" : "draw"},
+        "scissor" : {"paper" : "win",
+                     "rock" : "lose"
+                     "scissor" : "draw"}}
+
+play = True
+while play:
+    player1 = input(str("Wpisz swoj ruch: "))
+    player2 = input(str("Wpisz swoja odpowiedz: "))
+    print(rule[player1][player2])
+    if (player1 or player2) = "stop"
+    play = False

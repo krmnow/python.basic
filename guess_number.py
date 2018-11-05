@@ -1,8 +1,11 @@
 import random
 
 number = random.randint(1,9)
-
 guess = 0
-
 count = 0
-print(number)
+
+while guess != number and guess != "exit":
+    guess = input("What's your guess?")
+    if guess == "exit":
+
+        break

@@ -27,3 +27,10 @@ if np.max(X_test) == 255: X_test /= 255
 
 num_pixels = X_train.shape[1]
 num_classes = y.train.shape[1] 
+
+model = Sequential([
+        Dense(512, input_dim=num_pixels),
+        Dense(num_classes, activation='softmax')
+        ])
+model.compile(optimizer='adam', loss='categorical_crossentropy')
+model.summary()

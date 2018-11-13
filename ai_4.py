@@ -1,4 +1,10 @@
-import numpy as np
+
+class Neural_Network(object):
+  def __init__(self):
+    #parameters
+    self.inputSize = 2
+    self.outputSize = 1
+    self.hiddenSize = 3import numpy as np
 
 # X = (hours sleeping, hours studying), y = score on test
 X = np.array(([2, 9], [1, 5], [3, 6]), dtype=float)

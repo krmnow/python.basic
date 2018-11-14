@@ -26,3 +26,7 @@ S(6.5) = 0.998498818
 (.9994 * .4) + (1.000 * .5) + (.9984 * .9) = 1.79832
 
 S(1.79832) = .8579443067
+
+#weights
+self.W1 = np.random.randn(self.inputSize, self.hiddenSize) # (3x2) weight matrix from input to hidden layer
+self.W2 = np.random.randn(self.hiddenSize, self.outputSize) # (3x1) weight matrix from hidden to output layer

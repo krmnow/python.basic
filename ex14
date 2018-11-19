@@ -4,3 +4,6 @@ def dedupe_v1(x):
     if i not in y:
       y.append(i)
   return y
+
+def dedupe_v2(x):
+    return list(set(x))
